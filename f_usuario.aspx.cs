@@ -167,7 +167,7 @@ namespace Semana16_SitioWebCRUDUsuario
             bactualizar.Visible = true;
 
             //usuario_modificar = txtusuario.Text.ToString();
-            usuario_modificar = txtbuscar.Text.ToString();
+            usuario_modificar = txtusuario.Text.ToString();
         }
 
 
@@ -195,7 +195,7 @@ namespace Semana16_SitioWebCRUDUsuario
                 //myCommand.Parameters.Add("?nivel", MySqlDbType.Int32, 11).Value = lstnivel.Text;
 
                 //Segunda forma de pasar los valores, usaremos esta forma
-                string myInsertQuery = "UPDATE usuarios SET nombre = '" + nom + "', clave = '" + cla + "',nivel = '" + niv + "' WHERE idusuario = '" + usuario_modificar + "'";
+                string myInsertQuery = "UPDATE usuarios SET nombre = '" + nom + "', clave = '" + cla + "',nivel = '" + niv + "' WHERE idusuario = " + txtbuscar.Text + "  " ;
                 SqlCommand myCommand = new SqlCommand(myInsertQuery);
 
                 myCommand.Connection = myConnection;
